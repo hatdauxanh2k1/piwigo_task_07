@@ -1,0 +1,56 @@
+/* ----------------------------------------------------------------------- */
+/* Tags CSS */
+/* Đặt kiểu cơ bản cho thẻ tag cloud */
+#fullTagCloud {
+  display: flex;
+  flex-wrap: wrap; /* Đảm bảo các thẻ tự xuống dòng khi hết không gian */
+  gap: 10px; /* Khoảng cách giữa các thẻ */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+#fullTagCloud span {
+  display: inline-block;
+}
+
+#fullTagCloud a {
+  display: inline-block;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #ffffff; /* Màu chữ */
+  background-color: #09b6b9; /* Màu nền cho thẻ */
+  text-decoration: none;
+  border-radius: 50px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Tùy chỉnh màu sắc dựa trên cấp độ thẻ tag */
+
+/* Hiệu ứng khi hover */
+#fullTagCloud a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #fullTagCloud {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  #fullTagCloud a {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #fullTagCloud a {
+    font-size: 10px;
+    padding: 5px 8px;
+  }
+}
+/* END Tags CSS */
