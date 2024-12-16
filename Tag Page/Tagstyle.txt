@@ -1,0 +1,146 @@
+/* ----------------------------------------------------------------------- */
+/* Tags CSS */
+/* Đặt kiểu cơ bản cho thẻ tag cloud */
+#fullTagCloud,
+#tagCloud {
+  display: flex;
+  flex-wrap: wrap; /* Đảm bảo các thẻ tự xuống dòng khi hết không gian */
+  gap: 10px; /* Khoảng cách giữa các thẻ */
+  padding: 20px;
+  border-radius: 8px;
+  justify-content: center;
+}
+
+#fullTagCloud span,
+#tagCloud span {
+  display: inline-block;
+}
+
+#fullTagCloud a,
+#tagCloud a {
+  display: inline-block;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #ffffff; /* Màu chữ */
+  background-color: #09b6b9; /* Màu nền cho thẻ */
+  text-decoration: none;
+  border-radius: 50px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Tùy chỉnh màu sắc dựa trên cấp độ thẻ tag */
+
+/* Hiệu ứng khi hover */
+#fullTagCloud a:hover,
+#tagCloud a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #fullTagCloud,
+  #tagCloud {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  #fullTagCloud,
+  #tagCloud a {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #fullTagCloud,
+  #tagCloud a {
+    font-size: 16px;
+    padding: 5px 8px;
+  }
+}
+
+/* Tag letter Plugin PWG stuffs---------------------------------------------------------- */
+
+/* Bao bọc tổng thể */
+.pwgstuffs-content:has(table) {
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  max-width: 800px; /* Giới hạn chiều rộng */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Fieldset cho từng nhóm */
+.pwgstuffs-content fieldset.tagLetter {
+  margin: 10px 5px; /* Khoảng cách giữa các nhóm tagletter */
+  padding: 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+/* Tiêu đề chữ cái (Legend) */
+.pwgstuffs-content fieldset.tagLetter legend.tagLetterLegend {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  padding: 8px 12px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Danh sách các mục con */
+.pwgstuffs-content table.tagLetterContent {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pwgstuffs-content table.tagLetterContent .tagLine {
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+}
+
+.pwgstuffs-content table.tagLetterContent .tagLine:first-child {
+  border-top: none;
+}
+
+/* Link và tên tag */
+.pwgstuffs-content table.tagLetterContent .tagLine a {
+  color: #0073e6;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.pwgstuffs-content table.tagLetterContent .tagLine a:hover {
+  text-decoration: underline;
+  color: #005bb5;
+}
+
+/* Số lượng phần tử */
+.pwgstuffs-content table.tagLetterContent .tagLine .nbEntries {
+  background-color: #f0f0f0;
+  font-size: 0.9rem;
+  color: #555;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 600px) {
+  .pwgstuffs-content table.tagLetterContent .tagLine {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
+/* END Tags CSS */
